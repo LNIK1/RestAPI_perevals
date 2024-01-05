@@ -57,7 +57,7 @@ class PerevalListSerializer(serializers.ModelSerializer):
     add_time = serializers.DateTimeField(format='%d-%m-%Y %H:%M:%S', read_only=True)
     user = UserSerializer()
     coord = CoordinateSerializer()
-    level = LevelSerializer(allow_null=True, default=False)
+    level = LevelSerializer()
 
     class Meta:
 
