@@ -16,4 +16,3 @@ urlpatterns = [
     path('perevals/edit/', include(edit_pereval.urls)),
     path('perevals/user__email=<str:email>', PerevalUserListViewset.as_view()),
 ]
-

@@ -8,30 +8,33 @@ from .serializers import UserSerializer, CoordinateSerializer, LevelSerializer, 
 
 
 class UserViewset(viewsets.ModelViewSet):
-
+    """Пользователь (турист)"""
     queryset = PerevalUser.objects.all()
     serializer_class = UserSerializer
 
 
 class CoordinateViewset(viewsets.ModelViewSet):
+    """Координаты перевала"""
 
     queryset = PerevalCoordinate.objects.all()
     serializer_class = CoordinateSerializer
 
 
 class LevelViewset(viewsets.ModelViewSet):
-
+    """Уровни сложности в зависимости от сезона"""
     queryset = PerevalLevel.objects.all()
     serializer_class = LevelSerializer
 
 
 class ImageViewset(viewsets.ModelViewSet):
+    """Фотографии перевала"""
 
     queryset = Image.objects.all()
     serializer_class = ImageSerializer
 
 
 class PerevalCreateViewset(viewsets.ModelViewSet):
+    """Создание перевала"""
 
     queryset = PerevalAdded.objects.filter(id=0)
     serializer_class = PerevalSerializer
@@ -67,6 +70,7 @@ class PerevalCreateViewset(viewsets.ModelViewSet):
 
 
 class PerevalUpdateViewset(viewsets.ModelViewSet):
+    """Обновление данных перевала"""
 
     queryset = PerevalAdded.objects.all().order_by('id')
     serializer_class = PerevalSerializer
@@ -99,6 +103,7 @@ class PerevalUpdateViewset(viewsets.ModelViewSet):
 
 
 class PerevalListView(APIView):
+    """Вывод списка перевалов"""
 
     def get(self, request):
 
@@ -109,6 +114,7 @@ class PerevalListView(APIView):
 
 
 class PerevalUserListViewset(APIView):
+    """Вывод списка перевалов, добавленных пользователем"""
 
     def get(self, request, email):
         perevals = PerevalAdded.objects.filter(user__email=email).order_by('id')
