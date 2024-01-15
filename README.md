@@ -162,3 +162,7 @@ _______
 *Документация **swagger**: https://LNik.pythonanywhere.com/swagger/<br/>*
 
 ______
+
+***Отчет о покрытии тестами:***
+
+![2023-04-10_002254](https://github.com/LNIK1/RestAPI_perevals/blob/main/Virt_perevals/coverage_tests.jpg)
